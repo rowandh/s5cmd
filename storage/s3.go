@@ -414,8 +414,8 @@ func (s *S3) Put(
 		Bucket:      aws.String(to.Bucket),
 		Key:         aws.String(to.Path),
 		Body:        reader,
-		ContentType: "text/csv",
-		ContentEncoding: "gzip"
+		ContentType: aws.String("text/csv"),
+		ContentEncoding: aws.String("gzip")
 	}
 
 	storageClass := metadata.StorageClass()
